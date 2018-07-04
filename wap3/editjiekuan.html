@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+    <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+        <div class="col-sm-10" id="metalistonej">
+           <div class="input-group input-group-minimal">
+                <input type="email" class="form-control" placeholder="请输入借款编号查询">
+                <span class="input-group-addon">
+                    <i class="linecons-search"></i>
+                </span>
+            </div>
+        </div>
+    </ul>
+            
+     <script>
+         $(function(){
+             $('.input-group select').searchableSelect();
+         });
+     </script>
+
+    <div class="newmain">
+      <p class="golist"><i class="icon font_family icon-btn_more_arrowup"></i>返回列表</a>
+    </div>
+
+        <form class="form-horizontal" id="refill">
+    <div class="newmenu">      
+        <h1>新建借款记录</h1>
+       <button type="button" class="reok">保存</button>
+       <button type="button" class="relink"><img src="assets/images//btn_refresh.png">重置</button>
+    </div>
+
+<div class="newcon">
+        <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label">创建时间：</label>
+             <div class="iDate date2">
+               <input type="text">
+                <button type="button" class="addOn"></button>
+             </div>
+         </div>    
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>借 方：</label>
+              <input class="form-control erro" id="inputPassword3" placeholder="请输入5~15字段">
+              <p class="perro">此项不能为空</p>
+          </div> 
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>贷 放：</label>
+              <input class="form-control erro" id="inputPassword3" placeholder="请输入5~15字段">
+              <p class="perro">此项不能为空</p>
+          </div> 
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">借款金额：</label>
+              <input class="form-control" id="inputPassword3" placeholder="请输入5~15字段"><span class="spanim">元</span>  
+          </div>  
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>借款编号：</label>
+            <span class="qsdata">JKDW201805140021</span>
+          </div>  
+
+        <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>备  注：</label>
+             <textarea name="" id="" class="textareajl" placeholder="请输入5~15字段"></textarea>
+         </div>
+
+        <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label">上传合同扫描件：</label>
+             <div class="import">
+                 <p><img src="assets/images/input_updown.png"</p>
+                 <p>点击或将文件拖拽到这里上传</p>
+             </div> 
+         </div> 
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">已使用金额：</label>
+            <span class="qsdata">__元</span>
+          </div> 
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">剩余可使用金额：</label>
+            <span class="qsdata">__元</span>
+          </div> 
+
+
+        <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label">上传合同扫描件：</label>
+                <div class="topcenterright" id="tablelad">
+                  <h2>总还款金额：</h2>
+                  <h1>515,458,100.00<span>元</span></h1>
+                  <h3>欠款金额：</h3>
+                  <p>52,300.00<span>元</span></p>
+                </div>
+                <div class="mphk" id="mp">
+                      <table id="testtable" class="invoice">
+                          <thead>
+                            <tr>
+                               <th>还款日期</th>
+                               <th>还款金额 (元)</th>
+                               <th>发票凭证</th>
+                               <th colspan="2">操作</th>
+                             </tr>
+                            </thead>
+                        <tbody>
+                            <tr>
+                              <td class="noborr">2018-04-06</td>
+                              <td class="noborj">1,970.00</td>
+                              <td class="noborz" id="zuofei"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+                              <td class="noboro">
+                                <div class="lastchild">编辑</div>
+                              </td>
+                              <td class="nobor">
+                                  <i class="icon font_family icon-btn_list_delete"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="noborr">2018-04-06</td>
+                              <td class="noborj">1,970.00</td>
+                              <td class="noborz" id="zuofei"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+                              <td class="noboro">
+                                <div class="lastchild">编辑</div>
+                              </td>
+                              <td class="nobor">
+                                  <i class="icon font_family icon-btn_list_delete"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="6">
+                                <p class="addmess">
+                                <i class="icon font_family icon-btn_add"></i>添加账号
+                                </p>
+                              </td>
+                            </tr>
+                      </tbody>
+                    </table>
+                </div>
+         </div> 
+<div id="mb"></div>
+<div class="conalert"  id="conalert1">
+        <img class="conimg" src="assets/images/yimg/yuan001.png">
+</div>
+
+         <button type="button" class="btn btn-success">保存</button>
+</div>
+        </form>
+<script type="text/javascript">
+$(document).ready(function(){
+    if($(".iDate.date1,.iDate.date2,.iDate.date3,.iDate.date4,.iDate.date5").length>0){
+        $(".iDate.date1,.iDate.date2,.iDate.date3,.iDate.date4,.iDate.date5").datetimepicker({
+            locale:"zh-cn",
+            format:"YYYY-MM-DD",
+            dayViewHeaderFormat:"YYYY年 MMMM"
+        });
+    }
+    //弹出位置
+    $(".addOn").click(function(){
+        var inset = $(this).offset();
+        $(".dtPicker .inner").css("left",inset.left + 120);
+        $(".dtPicker .inner").css("top",inset.top + 200);
+    });
+     //清空
+     $(".relink").click(function(){
+       $('input').val('')
+     });
+     //返回列表
+     $(".golist").click(function(){
+       window.history.back();
+     });
+     //提交账户
+     $(".mesboxi").hover(function(){
+       $(".bubble1").css("display","block");
+     },function(){
+       $(".bubble1").css("display","none");
+     });
+     $(".mesboxi").click(function(){
+       $(this).toggleClass("erro").siblings(".form-control").toggleClass("erro");
+       $(this).siblings(".perro").toggleClass("perroblo");
+
+     });
+     //添加账号
+     $('.invoice .addmess').click(function(){
+          $(this).parent().parent("tr").before('<tr><td class="noborr"><input type="text" class="modify3" placeholder="请输入开票日期" value=""/></td><td  class="noborj"><input type="text" class="modify4" placeholder="请输入开票金额" value=""/></td><td class="noborz" id="zuofei"><div class="clickup"><img src="assets/images/btn_dc.png">点击上传</div></td><td class="noboro"><div class="baocun">保存</div> </td><td class="nobor"> <i class="icon font_family icon-btn_list_delete"></i> </td></tr>');
+     });
+     //删除
+     $(document).on('click', '#mp .nobor i', function() {
+          $(this).parent().parent("tr").remove();
+     });
+     //编辑
+     $(document).on('click', '.invoice .noboro .lastchild', function() {
+           var riqi = $(this).parent(".noboro").siblings(".noborr").text();
+           var jine = $(this).parent(".noboro").siblings(".noborj").text();
+           var piaohao = $(this).parent(".noboro").siblings(".noborh").text();
+           $(this).parent(".noboro").siblings(".noborr").html('<input type="text" class="modify3" value="' + riqi + '"/>');
+           $(this).parent(".noboro").siblings(".noborj").html('<input type="text" class="modify4" value="' + jine + '"/>');
+           $(this).parent(".noboro").siblings(".noborz").html('<div class="clickup"><img src="assets/images/btn_dc.png">点击上传</div>');
+           $(this).text("保存").toggleClass("baocun").removeClass("lastchild");
+     });
+     //保存
+     $(document).on('click', '.invoice .baocun', function() {
+         $(this).parent(".noboro").siblings(".noborr").html($(".modify3").val());
+         $(this).parent(".noboro").siblings(".noborj").html($(".modify4").val());
+         $(this).parent(".noboro").siblings(".noborz").html('<div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div>');
+         $(this).text("编辑").addClass("lastchild").removeClass("baocun");
+     });
+
+
+            //图片鼠标移动事件
+            $(".pimg").hover(function(){
+              $(this).find(".icon-input_search").css("display","block");
+            },function(){
+              $(this).find(".icon-input_search").css("display","none");
+            });
+
+            //图片弹出
+            $(".icon-input_search").click(function(){
+              $("#mb,.conalert").css("display","block");
+              var picindex = $(".import").offset();
+              $("#conalert1").css("top",picindex.top);
+            });
+            $("#mb").click(function(){
+              $("#mb,.conalert").css("display","none");
+            });
+
+})
+</script>
+
+</body>
+</html>

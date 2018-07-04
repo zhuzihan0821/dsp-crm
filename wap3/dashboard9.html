@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+    <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain"></ul>
+            
+     <script>
+         $(function(){
+             $('.input-group select').searchableSelect();
+         });
+     </script>
+
+    <div class="topmain">
+        <h1>催款提醒</h1>
+    </div>
+
+   <div class="threeleft" id="persant2">
+
+<div class="rightbottom">
+  <div class="bjui-pageContent">
+         <div class="input-group" id="input-group1">
+            <span class="tspan">请选择：</span>
+              <select onChange="location='www.baidu.com'">
+                <option value="jQue">二代主体</option>
+                <option value="Black">L440</option>
+                <option value="device">L50</option>
+                <option value="with">L30</option>
+                <option value="enterta">L40</option>
+                <option value="and">L10</option>
+                <option value="social">省/L20</option>
+            </select>
+            <span class="tspan">催账类型：</span>
+              <select>
+                <option value="jQue">全部</option>
+                <option value="Black">L440</option>
+                <option value="device">L50</option>
+                <option value="with">L30</option>
+                <option value="enterta">L40</option>
+                <option value="and">L10</option>
+                <option value="social">省/L20</option>
+            </select>
+         </div> 
+  </div>
+</div>
+    </div>
+<div class="threeright" id="persant">
+  <h2 class="maintop">总欠款金额</h2>
+  <h1>515,48,100,00<span>元</span></h1>
+</div>
+<div class="threeright" id="persant">
+  <h2 class="maintop">到期欠款金额</h2>
+  <h1>515,45,100,00<span>元</span></h1>
+</div>
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p><img src="assets/images/btn_dr.png">导入</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+<div  id="jilutable">                                              
+<div class="table" id="zuofei">
+<table id="testtable" class="yhh-data-table end-view-btn">
+  <thead>
+    <tr>
+      <th>
+<input type="checkbox" class="cbr cbr-secondary">
+      </th>
+      <th>二代主体</th>
+      <th>垫款上限 (元)</th>
+      <th>账期 (天)</th>
+      <th>总欠款金额 (元)</th>
+      <th>到期欠款金额 (元)</th>
+      <th>催款</th>
+      <th>操作</th></tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="shix"></p>账期到期</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="shix"></p>账期到期</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td><span class="textline">231,115.05</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td><span class="textline">15</span><i class="icon font_family icon-btn_list_edit"></i></td>
+      <td>231,115.05</td>
+      <td>32,145.46</td>
+      <td><p class="zf"></p>垫款达到上限</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var lastnum = ($(".table .total-num").text()) % 10;
+        var delindex = Math.floor(($(".table .total-num").text()) / 10);
+        var index =  delindex + 1;
+            $(".table .paginate-box").click(function(){
+                if($(".table .current-btn").text() == index){ 
+                     $(".table .fix tr").slice(lastnum+1).css("display","none")
+                }
+                else{
+                    $(".table .fix tr").css("display","table-row");
+                    $(".table .fix table tr td").css("height","52px");
+                }
+            });
+
+            $(".table .rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $(".table #testtable tr").eq(reindex).remove();
+                $(".table .fix tr").eq(reindex).css("display","none");
+            });
+
+            $(".table #testtable4 thead .cbr-replaced").click(function(){
+                 $(".table #testtable4 tbody .cbr-replaced").toggleClass("cbr-checked")
+            })
+
+           $(".icon-btn_list_edit").click(function(){
+             if($(".baocun").length>0){
+               alert("请保存当前修改再继续");
+             }
+             else{
+                 var valueindex = $(this).parent("td").find("span").text();
+                 $(this).parent("td").find("span").html('<input type="text" class="modify" value="' + valueindex + '"/><button type="button" class="baocun">保存</button>');
+                 $(".baocun").click(function(){
+                   $(this).parent("span").html($(".modify").val());
+                 })
+               } 
+           });
+        })
+        //图片鼠标移动事件
+        $(".pimg").hover(function(){
+          $(this).find(".icon-input_search").css("display","block");
+        },function(){
+          $(this).find(".icon-input_search").css("display","none");
+        });
+        //图片弹出
+        $(".icon-input_search").click(function(){
+          $("#mb,.conalert,.metabox").css("display","block");
+        });
+        $("#mb").click(function(){
+          $("#mb,.conalert").css("display","none");
+        });
+        //表中下拉
+        $(".icon-btn_list_downarrow").click(function(){
+          var poslist = $(this).offset();
+              $(this).siblings("#show").css("display","block");
+              $(this).siblings("#show").css("top",poslist.top);
+              $(this).siblings("#show").css("left",poslist.left - 40);
+                $("#show li").click(function(){
+                    if($(this).index() == 0){
+                      $(this).parents("#show").parent("td").find("span").text("GDT");
+                    }
+                    else{
+                      $(this).parents("#show").parent("td").find("span").text("MP");
+                    }
+                    $(this).parents("#show").css("display","none");
+                })
+        })
+         $(".iconmain").click(function(){
+           var slideindex = $(this).parents("tr").index();
+           var slideheiht = $(this).siblings(".xllist").outerHeight()+53;
+           $(this).siblings(".xllist").show();
+           $("#testtable4 tbody tr").eq(slideindex + 1).css("height",slideheiht),
+           $(this).css("visibility","hidden");
+               $(".iconmainb").click(function(){
+                     var slideindex = $(this).parents("tr").index();
+                     $(this).parents(".xllist").hide();
+                     $("#testtable4 tbody tr").eq(slideindex + 1).css("height","0px");
+                     $(this).parents(".xllist").siblings(".iconmain").css("visibility","visible")
+               });
+         });
+
+
+         //表格弹出
+         $(".outname").click(function(){
+            $(".conalert").css("display","none!important");
+            $("#mb,#conalert").css("display","block");
+         });
+         $("#choseid").click(function(){
+            $("#mb").css("display","none");
+            $("#conalert").css("display","none");
+          });
+</script>
+</body>
+</html>

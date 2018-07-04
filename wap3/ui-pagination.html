@@ -1,0 +1,361 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+                <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+                                    <div class="col-sm-10" id="metalistone4">
+                                        <div class="searchin">
+                                              <i class="icon font_family icon-input_search"></i>搜索入口<i class="icon font_family icon-btn_more_arrowup"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="bubble" id="merge">
+                                      供应商：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="erdai">
+                                      二代主体：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="yuanerdai">
+                                      原二代主体：<span>天津</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="number">
+                                      合同编号：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+
+                                    <div class="metabox">
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">供应商：</label>
+                                            <input class="form-control" id="inputPassword1" placeholder="请输关键词">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">二代主体：</label>
+                                            <input class="form-control" id="inputPassword2" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">原二代主体：</label>
+                                            <input class="form-control" id="inputPassword3" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">合同编号：</label>
+                                            <input class="form-control" id="inputPassword4" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="hewap"></div>
+                                          <button type="button" class="search">搜索</button>
+                                          <button type="button" class="fregin">清空</button>
+                                    </div>
+
+
+                        </ul>
+
+
+    <div class="topmain">
+        <h1>二代-返点变更记录</h1>
+        <a href="adderdai.html"><p>新增记录</p></a>
+    </div>
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p><img src="assets/images/btn_dr.png">导入</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table">
+<table id="testtable" class="yhh-data-table end-view-btn">
+  <thead>
+    <tr>
+      <th>
+<input type="checkbox" class="cbr cbr-secondary">
+      </th>
+      <th>供应商</th>
+      <th>二代主体</th>
+      <th>返点</th>
+      <th>原二代主体</th>
+      <th>原适点</th>
+      <th>变更日期</th>
+      <th>合同编号</th>
+      <th>操作</th></tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg02</td>
+      <td>tgfhfgh6546003</td>
+      <td>t56456004</td>
+      <td>55656t005</td>
+      <td>t005</td>
+      <td>t005</td>
+      <td>t005</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg12</td>
+      <td>tgfhfgh6546013</td>
+      <td>t56456014</td>
+      <td>55656t015</td>
+      <td>t015</td>
+      <td>t015</td>
+      <td>t015</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg22</td>
+      <td>tgfhfgh6546023</td>
+      <td>t56456024</td>
+      <td>55656t025</td>
+      <td>t025</td>
+      <td>t025</td>
+      <td>t025</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg32</td>
+      <td>tgfhfgh6546033</td>
+      <td>t56456034</td>
+      <td>55656t035</td>
+      <td>t035</td>
+      <td>t035</td>
+      <td>t035</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg42</td>
+      <td>tgfhfgh6546043</td>
+      <td>t56456044</td>
+      <td>55656t045</td>
+      <td>t045</td>
+      <td>t045</td>
+      <td>t045</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg52</td>
+      <td>tgfhfgh6546053</td>
+      <td>t56456054</td>
+      <td>55656t055</td>
+      <td>t055</td>
+      <td>t055</td>
+      <td>t055</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg62</td>
+      <td>tgfhfgh6546063</td>
+      <td>t56456064</td>
+      <td>55656t065</td>
+      <td>t065</td>
+      <td>t065</td>
+      <td>t065</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg72</td>
+      <td>tgfhfgh6546073</td>
+      <td>t56456074</td>
+      <td>55656t075</td>
+      <td>t075</td>
+      <td>t075</td>
+      <td>t075</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg82</td>
+      <td>tgfhfgh6546083</td>
+      <td>t56456084</td>
+      <td>55656t085</td>
+      <td>t085</td>
+      <td>t085</td>
+      <td>t085</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+<input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>tdfggfdgfg92</td>
+      <td>tgfhfgh6546093</td>
+      <td>t56456094</td>
+      <td>55656t095</td>
+      <td>t095</td>
+      <td>t095</td>
+      <td>t095</td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(function(){
+            $(".rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $("#testtable tr").eq(reindex+1).remove();
+            });
+
+            $("#testtable thead .cbr-replaced").click(function(){
+                 $("#testtable tbody .cbr-replaced").toggleClass("cbr-checked")
+            });
+            //列表显示控制
+            $(".searchin").click(function(){
+              $(".metabox").toggleClass("showmun");
+            });
+            //清空
+            $(".fregin").click(function(){
+              $(".metabox input").val("");
+            });
+            //搜索
+            $(".search").click(function(){
+             if($("#inputPassword1").val() != ''){
+                $("#merge").css("display","block");
+                $("#merge span").text($("#inputPassword1").val().slice(0,3));
+             }
+             if($("#inputPassword2").val() != ''){
+                $("#erdai").css("display","block");
+                $("#erdai span").text($("#inputPassword2").val().slice(0,3));
+             }
+             if($("#inputPassword3").val() != ''){
+                $("#yuanerdai").css("display","block");
+                $("#yuanerdai span").text($("#inputPassword3").val().slice(0,2));
+             }
+             if($("#inputPassword4").val() != ''){
+                $("#number").css("display","block");
+                $("#number span").text($("#inputPassword4").val().slice(0,3));
+             }
+             $(".metabox input").val("");
+              $(".metabox").toggleClass("showmun");
+            }); 
+            //删除已选
+            $(".bubble .icon-pop_close").click(function(){
+              $(this).parent(".bubble").css("display","none");
+            });
+        })
+</script>
+
+</body>
+</html>

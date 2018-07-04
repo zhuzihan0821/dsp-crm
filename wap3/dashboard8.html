@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+
+            
+                <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+                    <li class="search-form">
+
+                                    <div class="col-sm-10" id="metalistone">
+                                        <div class="input-group">
+                                              <select>
+                                                <option value="jQue">账户ID</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                              </select>
+                                                 <script>
+                                                     $(function(){
+                                                         $('.input-group select').searchableSelect();
+                                                     });
+                                                 </script>
+
+            
+                                            <div class="input-group input-group-minimal">
+                                            <input type="email" class="form-control" placeholder="请输入账户ID进行查询">
+                                            <span class="input-group-addon">
+                                                <i class="linecons-search"></i>
+                                            </span>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </li>
+                        </ul>
+            
+            
+    <div class="topmain">
+        <h1>考核相关账户属性</h1>
+    </div>
+
+
+    <div class="topcenterleft">
+		<div class="leftbottom">
+           <span class="tspan">所属地区：</span>
+                  <div class="form-block" id="formblock">
+                    <select name="province" id="province" class="selcity" >
+                        <option value="">省</option>
+                    </select>
+                    <select name="city" id="city" class="selcity">
+                        <option value="">市</option>
+                    </select>
+                              <script type="text/javascript">
+                                  $(function(){
+                                      //页面加载完毕后开始执行的事件
+                                      var city_json='{"北京": ["北京"], "广东": ["广州", "深圳", "珠海", "汕头", "韶关", "佛山", "江门", "湛江", "茂名", "肇庆", "惠州", "梅州", "汕尾", "河源", "阳江", "清远", "东莞", "中山", "潮州", "揭阳", "云浮"], "上海": ["黄浦区", "卢湾区", "徐汇区", "长宁区", "静安区", "普陀区", "闸北区", "虹口区", "杨浦区", "宝山区", "闵行区", "嘉定区", "松江区", "金山区", "青浦区", "南汇区", "奉贤区", "浦东新区", "崇明县"], "天津": ["和平区", "河东区", "河西区", "南开区", "河北区", "红桥区", "塘沽区", "汉沽区", "大港区", "东丽区", "西青区", "北辰区", "津南区", "武清区", "宝坻区", "静海县", "宁河县", "蓟县"], "重庆": ["渝中区", "大渡口区", "江北区", "南岸区", "北碚区", "渝北区", "巴南区", "长寿区", "双桥区", "沙坪坝区", "万盛区", "万州区", "涪陵区", "黔江区", "永川区", "合川区", "江津区", "九龙坡区", "南川区", "綦江县", "潼南县", "荣昌县", "璧山县", "大足县", "铜梁县", "梁平县", "开县", "忠县", "城口县", "垫江县", "武隆县", "丰都县", "奉节县", "云阳县", "巫溪县", "巫山县", "石柱土家族自治县", "秀山土家族苗族自治县", "酉阳土家族苗族自治县", "彭水苗族土家族自治县"], "辽宁": ["沈阳", "大连", "鞍山", "抚顺", "本溪", "丹东", "锦州", "营口", "阜新", "辽阳", "盘锦", "铁岭", "朝阳", "葫芦岛"], "江苏": ["南京", "苏州", "无锡", "常州", "镇江", "南通", "泰州", "扬州", "盐城", "连云港", "徐州", "淮安", "宿迁"], "湖北": ["武汉", "黄石", "十堰", "荆州", "宜昌", "襄樊", "鄂州", "荆门", "孝感", "黄冈", "咸宁", "随州", "恩施土家族苗族自治州", "仙桃", "天门", "潜江", "神农架林区"], "四川": ["成都", "自贡", "攀枝花", "泸州", "德阳", "绵阳", "广元", "遂宁", "内江", "乐山", "南充", "眉山", "宜宾", "广安", "达州", "雅安", "巴中", "资阳", "阿坝藏族羌族自治州", "甘孜藏族自治州", "凉山彝族自治州"], "陕西": ["西安", "铜川", "宝鸡", "咸阳", "渭南", "延安", "汉中", "榆林", "安康", "商洛"], "河北": ["石家庄", "唐山", "秦皇岛", "邯郸", "邢台", "保定", "张家口", "承德", "沧州", "廊坊", "衡水"], "山西": ["太原", "大同", "阳泉", "长治", "晋城", "朔州", "晋中", "运城", "忻州", "临汾", "吕梁"], "河南": ["郑州", "开封", "洛阳", "平顶山", "安阳", "鹤壁", "新乡", "焦作", "濮阳", "许昌", "漯河", "三门峡", "南阳", "商丘", "信阳", "周口", "驻马店", "焦作"], "吉林": ["长春", "吉林", "四平", "辽源", "通化", "白山", "松原", "白城", "延边朝鲜族自治州"], "黑龙江": ["哈尔滨", "齐齐哈尔", "鹤岗", "双鸭山", "鸡西", "大庆", "伊春", "牡丹江", "佳木斯", "七台河", "黑河", "绥化", "大兴安岭地区"], "内蒙古": ["呼和浩特", "包头", "乌海", "赤峰", "通辽", "鄂尔多斯", "呼伦贝尔", "巴彦淖尔", "乌兰察布", "锡林郭勒盟", "兴安盟", "阿拉善盟"], "山东": ["济南", "青岛", "淄博", "枣庄", "东营", "烟台", "潍坊", "济宁", "泰安", "威海", "日照", "莱芜", "临沂", "德州", "聊城", "滨州", "菏泽"], "安徽": ["合肥", "芜湖", "蚌埠", "淮南", "马鞍山", "淮北", "铜陵", "安庆", "黄山", "滁州", "阜阳", "宿州", "巢湖", "六安", "亳州", "池州", "宣城"], "浙江": ["杭州", "宁波", "温州", "嘉兴", "湖州", "绍兴", "金华", "衢州", "舟山", "台州", "丽水"], "福建": ["福州", "厦门", "莆田", "三明", "泉州", "漳州", "南平", "龙岩", "宁德"], "湖南": ["长沙", "株洲", "湘潭", "衡阳", "邵阳", "岳阳", "常德", "张家界", "益阳", "郴州", "永州", "怀化", "娄底", "湘西土家族苗族自治州"], "广西": ["南宁", "柳州", "桂林", "梧州", "北海", "防城港", "钦州", "贵港", "玉林", "百色", "贺州", "河池", "来宾", "崇左"], "江西": ["南昌", "景德镇", "萍乡", "九江", "新余", "鹰潭", "赣州", "吉安", "宜春", "抚州", "上饶"], "贵州": ["贵阳", "六盘水", "遵义", "安顺", "铜仁地区", "毕节地区", "黔西南布依族苗族自治州", "黔东南苗族侗族自治州", "黔南布依族苗族自治州"], "云南": ["昆明", "曲靖", "玉溪", "保山", "昭通", "丽江", "普洱", "临沧", "德宏傣族景颇族自治州", "怒江傈僳族自治州", "迪庆藏族自治州", "大理白族自治州", "楚雄彝族自治州", "红河哈尼族彝族自治州", "文山壮族苗族自治州", "西双版纳傣族自治州"], "西藏": ["拉萨", "那曲地区", "昌都地区", "林芝地区", "山南地区", "日喀则地区", "阿里地区"], "海南": ["海口", "三亚", "五指山", "琼海", "儋州", "文昌", "万宁", "东方", "澄迈县", "定安县", "屯昌县", "临高县", "白沙黎族自治县", "昌江黎族自治县", "乐东黎族自治县", "陵水黎族自治县", "保亭黎族苗族自治县", "琼中黎族苗族自治县"], "甘肃": ["兰州", "嘉峪关", "金昌", "白银", "天水", "武威", "酒泉", "张掖", "庆阳", "平凉", "定西", "陇南", "临夏回族自治州", "甘南藏族自治州"], "宁夏": ["银川", "石嘴山", "吴忠", "固原", "中卫"], "青海": ["西宁", "海东地区", "海北藏族自治州", "海南藏族自治州", "黄南藏族自治州", "果洛藏族自治州", "玉树藏族自治州", "海西蒙古族藏族自治州"], "新疆": ["乌鲁木齐", "克拉玛依", "吐鲁番地区", "哈密地区", "和田地区", "阿克苏地区", "喀什地区", "克孜勒苏柯尔克孜自治州", "巴音郭楞蒙古自治州", "昌吉回族自治州", "博尔塔拉蒙古自治州", "石河子", "阿拉尔", "图木舒克", "五家渠", "伊犁哈萨克自治州"], "香港": ["中西区", "湾仔区", "东区", "南区", "深水埗区", "油尖旺区", "九龙城区", "黄大仙区", "观塘区", "北区", "大埔区", "沙田区", "西贡区", "元朗区", "屯门区", "荃湾区", "葵青区", "离岛区"], "澳门": ["花地玛堂区", "圣安多尼堂区", "大堂区", "望德堂区", "风顺堂区", "嘉模堂区", "圣方济各堂区", "路凼"], "台湾": ["台北市", "高雄市", "台北县", "桃园县", "新竹县", "苗栗县", "台中县", "彰化县", "南投县", "云林县", "嘉义县", "台南县", "高雄县", "屏东县", "宜兰县", "花莲县", "台东县", "澎湖县", "基隆市", "新竹市", "台中市", "嘉义市", "台南市"] }';
+                                      var city_obj=eval('('+city_json+')');
+                                      for (var key in city_obj)
+                                      {
+                                          $("#province").append("<option value='"+key+"'>"+key+"</option>");
+                                      }
+                                      $("#province").change(function(){
+                                          var now_province=$(this).val();
+                                          $("#city").html('<option value="">请选择城市</option>');
+                                          for(var k in city_obj[now_province])
+                                          {
+                                              var now_city=city_obj[now_province][k];
+                                              $("#city").append('<option value="'+now_city+'">'+now_city+'</option>');
+                                          }
+                                      });
+                                  });
+                              </script>
+                  </div>
+
+                        <div class="pardencr">
+                          <span class="tspan">分析行业：</span>
+                          <input type="text" class="searchid" placeholder="请输入借方名称">
+                        </div>
+
+                      <div class="input-group" id="input-group1">
+             					    <span class="tspan">关键名单匹配：</span>
+                            <select>
+                              <option value="jQue">L0</option>
+                              <option value="Black">L440</option>
+                              <option value="device">L50</option>
+                              <option value="with">L30</option>
+                              <option value="enterta">L40</option>
+                              <option value="and">L10</option>
+                              <option value="social">省/L20</option>
+                          </select>
+                       </div> 
+
+
+		</div>
+<div class="rightbottom">
+
+                      <div class="input-group" id="input-group1">
+                          <span class="tspan">TA类型：</span>
+                            <select>
+                              <option value="jQue">L0</option>
+                              <option value="Black">L440</option>
+                              <option value="device">L50</option>
+                              <option value="with">L30</option>
+                              <option value="enterta">L40</option>
+                              <option value="and">L10</option>
+                              <option value="social">省/L20</option>
+                          </select>
+
+                          <span class="tspan" id="tas2">TA-S2：</span>
+                            <select>
+                              <option value="jQue">L0</option>
+                              <option value="Black">L440</option>
+                              <option value="device">L50</option>
+                              <option value="with">L30</option>
+                              <option value="enterta">L40</option>
+                              <option value="and">L10</option>
+                              <option value="social">省/L20</option>
+                          </select>
+                       </div> 
+
+
+                     	<div class="bjui-pageContent">
+                     	    <div class="form-group d_t_dater">
+                     	          <span class="tspan">消耗日期：</span>
+                     	            <div class="input-group">
+                     	                <button type="button" class="btn btn-default" id="daterange-btn1">
+                     	                    <span>
+                     	                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+                     	                    </span>
+                     	                  </button>
+                     	            </div>
+                     	    </div>  
+                     	</div>
+                     </div>
+
+
+<div class="rightbottom" id="slideger">
+  <div class="bjui-pageContent">
+      <div class="form-group d_t_dater">
+            <span class="tspan">首充日期：</span>
+              <div class="input-group">
+                  <button type="button" class="btn btn-default" id="daterange-btn2">
+                      <span>
+                        请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+                      </span>
+                    </button>
+              </div>
+      </div>  
+  </div>
+  
+  <div class="bjui-pageContent">
+      <div class="form-group d_t_dater">
+            <span class="tspan">首消日期：</span>
+              <div class="input-group">
+                  <button type="button" class="btn btn-default" id="daterange-btn3">
+                      <span>
+                        请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+                      </span>
+                    </button>
+              </div>
+      </div>  
+  </div>
+</div>
+<div class="poimgon"><img src="assets/images/btn_zk_0.png"></div>
+<script type="text/javascript">
+    $('.ranges_1 ul').remove();
+    $('#daterange-btn1').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn1 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+
+
+    $('#daterange-btn2').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn2 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+
+
+    $('#daterange-btn3').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn3 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+</script>
+    </div>
+<div class="poimg"><img src="assets/images/btn_zk_1.png"></div>
+
+
+<div class="topcenterright">
+	<h2 class="maintop">总消耗</h2>
+	<h1>515,458,100,00</h1>
+  <h2 class="mainbottom">共计 14 条</h2>
+	<h3 class="mainbottomp"><div class="procxes"><img src="assets/images/btn_dc.png">查看详情</div></h3>
+</div>
+
+    <div class="topbottom">
+        <p style="display: none;"></p>
+        <p><img src="assets/images/btn_dr.png">导入</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table" id="jilutable">
+  <table id="testtable" class="motyble">
+      <thead>
+        <tr>
+           <th><input type="checkbox" class="cbr cbr-secondary"></th>
+           <th>账户ID</th>
+           <th>产品名称</th>
+           <th>广告主名称</th>
+           <th>省/市</th>
+           <th>首充日期</th>
+           <th>季度首充日期</th>
+           <th>季度首充金额 (元)</th>
+           <th>季度首充日期后的首消日期</th>
+           <th>分析行业</th>
+           <th>关键名单匹配</th>
+           <th>TA类型</th>
+           <th>TA-S2</th>
+           <th>新客</th>
+         </tr>
+        </thead>
+<tbody>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2313421</td>
+    <td>推广案例AA+</td>
+    <td>天津易云科技有限公司</td>
+    <td>天津</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td>2018-04-19</td>
+    <td><span class="textline">互联网</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>L3</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>L0</li>
+                 <li>L1</li>
+                 <li>L2</li>
+                 <li>L3</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>直营电商TA</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>本地TA</li>
+                 <li>区域TA</li>
+                 <li>其他</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span>是</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>是</li>
+                 <li>否</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td><span class="textline">天津点我有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+<div id="mb"></div>
+<div class="conalert"  id="conalert1">
+        <img class="conimg" src="assets/images/yimg/yuan001.png">
+</div>
+
+<div class="conalert2" id="conalert2">
+        <div class="mainc">
+            <div class="topcon">
+                <h1>消耗统计</h1>
+                <div id="choseid">
+                    <img src="assets/images/close.png" width="20" height="20" >
+                </div>
+            </div>
+            <div class="bluebox" id="bluebox">
+                <p>总消耗</p>
+                <h2>515,458,100,00<span>元</span></h2>
+                <p>共计<i>12条</i></p>
+            </div>
+            <ul class="blueleft">
+              <li><img src="assets/images/box_xiaohao_01.png">现金消耗</li>
+              <li><img src="assets/images/box_xiaohao_02.png">虚拟金消耗</li>
+              <li><img src="assets/images/box_xiaohao_03.png">信用金消耗</li>
+            </ul>
+            <ul class="blueright">
+              <li>518,100.00<span>元</span></li>
+              <li>518,100.00<span>元</span></li>
+              <li>518,100.00<span>元</span></li>
+            </ul>
+      </div>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var lastnum = ($(".table .total-num").text()) % 10;
+        var delindex = Math.floor(($(".table .total-num").text()) / 10);
+        var index =  delindex + 1;
+            $(".table .paginate-box").click(function(){
+                if($(".table .current-btn").text() == index){ 
+                     $(".table .fix tr").slice(lastnum+1).css("display","none")
+                }
+                else{
+                    $(".table .fix tr").css("display","table-row");
+                    $(".table .fix table tr td").css("height","52px");
+                }
+            });
+
+            $(".table .rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $(".table #testtable tr").eq(reindex).remove();
+                $(".table .fix tr").eq(reindex).css("display","none");
+            });
+
+            $(".table #testtable4 thead .cbr-replaced").click(function(){
+                 $(".table #testtable4 tbody .cbr-replaced").toggleClass("cbr-checked")
+            })
+        })
+
+	      $(".icon-btn_list_edit").click(function(){
+	      	if($(".baocun").length>0){
+	      		alert("请保存当前修改再继续");
+	      	}
+	      	else{
+	      	    var valueindex = $(this).parent("td").find("span").text();
+	      	    $(this).parent("td").find("span").html('<input type="text" class="modify" value="' + valueindex + '"/><button type="button" class="baocun">保存</button>');
+	      	    $(".baocun").click(function(){
+	      	    	$(this).parent("span").html($(".modify").val());
+	      	    })
+           	} 
+	      });
+        //表中下拉
+        $(".icon-btn_list_downarrow").click(function(){
+        	var poslist = $(this).offset();
+        	    $(this).siblings("#show").css("display","block");
+              $(this).parent().parent("tr").siblings().find("#show").css("display","none");
+        	    $(this).siblings("#show").css("top",poslist.top);
+        	    $(this).siblings("#show").css("left",poslist.left - 40);
+                $("#show li").click(function(){
+                    $(this).parents("#show").parent("td").find("span").html($(this).html());
+                    $(this).parents("#show").css("display","none");
+                })
+        })
+        //查看详情
+         $(".procxes").click(function(){
+            $("#mb,#conalert2").css("display","block");
+         });
+         $("#choseid").click(function(){
+            $("#mb,#conalert2").css("display","none");
+         });
+
+         //筛选下拉
+         $(".poimg").click(function(){
+            $("#slideger").show();
+            $(".poimgon").show();
+            $(".poimg").hide();
+            $(".topbottom").css("margin-top","250px");
+            $(".poimgon").css("margin-top","96px");
+         });
+          $(".poimgon").click(function(){
+            $("#slideger").hide();
+            $(".poimgon").hide();
+            $(".poimg").show();
+            $(".topbottom").css("margin-top","140px");
+         });
+
+
+</script>
+</body>
+</html>

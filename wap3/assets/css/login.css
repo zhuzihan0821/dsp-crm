@@ -1,0 +1,134 @@
+.concent{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding:0;
+    margin:0;
+    background: url(../../assets/images/bg.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.loginmain{
+    width: 620px;
+    height: 440px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 20%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.loginmain .logincontent{
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/pic.png) no-repeat center;
+    padding: 14px;
+    box-sizing: border-box;
+}
+.loginmain .logintop{
+    float: left;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+    top: 0;
+}
+.loginmain .logintop img{
+    width: auto;
+    height: auto;
+    padding-left: 30px;
+}
+.loginmain .logincontent .contentleft{
+    width: 49%;
+    float: left;
+    border-right: 1px dashed #E8E8F1;
+}
+.loginmain .logincontent .contentleft img{
+    width: auto;
+    height: auto;
+}
+.loginmain .logincontent .contentright{
+    float: right;
+    width: 52%;
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin-top: 70px;
+    overflow: hidden;
+}
+.loginmain .logincontent .contentright h1{
+    font-size: 20px;
+    color: #333333;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.loginmain .logincontent .contentright input{
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #E8E8F1;
+    font-size: 14px;
+    color: #B5BAC6;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 10px;
+    margin-top: 14px;
+    box-sizing: border-box;
+}
+.loginmain .logincontent .contentright .login{
+    width: 250px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    background: #15CBB2;
+    border-radius: 100px;
+    margin-top: 6px;
+}
+.loginmain .logincontent .contentright .reseti{
+    width: 250px;
+    height: 42px;
+    text-align: right;
+}
+.loginmain .logincontent .contentright .reseti .img{
+    width: 10px;
+    height: 44px;
+    float: right;
+    margin-top: 14px;
+    line-height: 44px;
+    cursor: pointer;
+}
+.loginmain .logincontent .contentright .reseti .img img{
+    width: 12px;
+    height: 12px;
+}
+.loginmain .logincontent .contentright .reseti input {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #464D62;
+    width: 40px;
+    float: right;
+}
+.loginmain .loginbottom{
+    width: 100%;
+    background: #FBFBFC;
+    border: 1px solid #E0E0EC;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 12px;
+    color: #B5BAC6;
+    position: absolute;
+    bottom: 0;
+}
+input{
+    outline: none
+}
+.reset{
+    cursor: pointer;
+}

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+    <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+        <div class="col-sm-10" id="metalistonej">
+           <div class="input-group input-group-minimal">
+                <input type="email" class="form-control" placeholder="请输入借款编号查询">
+                <span class="input-group-addon">
+                    <i class="linecons-search"></i>
+                </span>
+            </div>
+        </div>
+    </ul>
+            
+     <script>
+         $(function(){
+             $('.input-group select').searchableSelect();
+         });
+     </script>
+
+    <div class="topmain">
+        <h1>第三方借款记录</h1>
+        <a href="addjiekuan.html"><p>新增借款</p></a>
+    </div>
+
+    <div class="threeleft">
+		<div class="leftbottom">
+           <div class="input-group" id="input-group1">
+                      <div class="parden">
+             							<span class="tspan">借 方：</span>
+                          <input type="text" class="searchid" placeholder="请输入借方名称">
+                      </div>
+                      <div class="parden">
+                          <span class="tspan">贷 方：</span>
+                          <input type="text" class="searchid" placeholder="请输入贷方名称">
+                        </div>
+                      </div> 
+		</div>
+<div class="rightbottom">
+	<div class="bjui-pageContent">
+	    <div class="form-group d_t_dater">
+	          <span class="tspan">创建日期：</span>
+	            <div class="input-group">
+	                <button type="button" class="btn btn-default" id="daterange-btn1">
+	                    <span>
+	                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+	                    </span>
+	                  </button>
+	            </div>
+	    </div>  
+	</div>
+</div>
+<script type="text/javascript">
+    $('.ranges_1 ul').remove();
+    $('#daterange-btn1').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn1 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+</script>
+    </div>
+<div class="threeright">
+	<h2 class="maintop">总账显</h2>
+	<h1>515,48,100,00<span>元</span></h1>
+  <h2 class="mainbottom">共计 14 条</h2>
+</div>
+<div class="threeright">
+  <h2 class="maintop">总账显</h2>
+  <h1>515,45,100,00<span>元</span></h1>
+  <h2 class="mainbottom">共计 14 条</h2>
+</div>
+<div class="threeright">
+  <h2 class="maintop">总账显</h2>
+  <h1>515,58,100,00<span>元</span></h1>
+  <h2 class="mainbottom">共计 14 条</h2>
+</div>
+
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table" id="jilutable">
+  <table id="testtable">
+      <thead>
+        <tr>
+           <th><input type="checkbox" class="cbr cbr-secondary"></th>
+           <th>创建日期</th>
+           <th>借 方</th>
+           <th>贷 方</th>
+           <th>借款金额</th>
+           <th>借款编号</th>
+           <th>借款单据</th>
+           <th>已使用金额</th>
+           <th>剩余可使用金额 (元)</th>
+           <th>还款日期　　还款金额 (元)</th>
+           <th>总还款金额</th>
+           <th>欠款金额</th>
+           <th class="caozuo2">操作</th>
+         </tr>
+        </thead>
+<tbody>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>深圳市脸萌科技有限公司</td>
+    <td>天津易云科技有限公司</td>
+    <td>42,884.00</td>
+    <td><span class="outname">34356448878</span></td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>42,884.00</td>
+    <td>51,532.00</td>
+    <td class="slidedowndsp">
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td>51532.00</td>
+    </tr>
+  <tr>
+</tbody>
+  </table>
+
+
+
+
+<div class="fixjilu">
+    <table id="testtable4">
+        <th colspan="2">操作</th>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editjiekuan.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+   </table>
+</div>
+</div>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+
+<div id="mb"></div>
+<div class="conalert"  id="conalert1">
+        <img class="conimg" src="assets/images/yimg/yuan001.png">
+</div>
+<div class="conalert" id="conalert">
+        <div class="mainc">
+            <div class="topcon">
+                <h1>修改二代主体名称</h1>
+                <div id="choseid">
+                    <img src="assets/images/close.png" width="20" height="20" >
+                </div>
+            </div>
+            <table class="table table-hover" id="table">
+                    <tr>
+                        <td>充值日期</td>
+                        <td>充值编号</td>
+                        <td>账户ID</td>
+                        <td>产品名称</td>
+                        <td>二代主体</td>
+                        <td>垫款金额(元)</td>
+                        <td>欠款金额(元)</td>
+                    </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+                      <tr>
+                        <td>2018-04-20</td>
+                        <td class="outname">2018042401541</td>
+                        <td>3245654534</td>
+                        <td>天津易云科技有限公司</td>
+                        <td>Faceu激萌</td>
+                        <td>42,884.00</td>
+                        <td>42,884.00</td>
+                      </tr>
+            </table>
+            <div class="data-table-bottom-box paginate-containter">
+              <div class="info-box">显示
+                <span class="start-show-num info-num">1</span>到
+                <span class="end-show-num info-num">10</span>项，共
+                <span class="total-num info-num">12</span>项</div>
+              <div class="paginate-box">
+                <span class="paginate-num-btn-group">
+                  <a class="paginate-btn num-btn current-btn">1</a>
+                  <a class="paginate-btn num-btn end-view-btn">2</a></span>
+              </div>
+            </div>
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var lastnum = ($(".table .total-num").text()) % 10;
+        var delindex = Math.floor(($(".table .total-num").text()) / 10);
+        var index =  delindex + 1;
+            $(".table .paginate-box").click(function(){
+                if($(".table .current-btn").text() == index){ 
+                     $(".table .fix tr").slice(lastnum+1).css("display","none")
+                }
+                else{
+                    $(".table .fix tr").css("display","table-row");
+                    $(".table .fix table tr td").css("height","52px");
+                }
+            });
+
+            $(".table .rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $(".table #testtable tr").eq(reindex).remove();
+                $(".table .fix tr").eq(reindex).css("display","none");
+            });
+
+            $(".table #testtable4 thead .cbr-replaced").click(function(){
+                 $(".table #testtable4 tbody .cbr-replaced").toggleClass("cbr-checked")
+            })
+        })
+        //图片鼠标移动事件
+        $(".pimg").hover(function(){
+          $(this).find(".icon-input_search").css("display","block");
+        },function(){
+          $(this).find(".icon-input_search").css("display","none");
+        });
+        //图片弹出
+        $(".icon-input_search").click(function(){
+          $("#mb,#conalert1").css("display","block");
+        });
+        $("#mb").click(function(){
+          $("#mb,#conalert1").css("display","none");
+        });
+        //表中下拉
+        $(".icon-btn_list_downarrow").click(function(){
+        	var poslist = $(this).offset();
+        	    $(this).siblings("#show").css("display","block");
+        	    $(this).siblings("#show").css("top",poslist.top);
+        	    $(this).siblings("#show").css("left",poslist.left - 40);
+                $("#show li").click(function(){
+                    if($(this).index() == 0){
+                      $(this).parents("#show").parent("td").find("span").text("GDT");
+                    }
+                    else{
+                      $(this).parents("#show").parent("td").find("span").text("MP");
+                    }
+                    $(this).parents("#show").css("display","none");
+                })
+        })
+         $(".iconmain").click(function(){
+           var slideindex = $(this).parents("tr").index();
+           var slideheiht = $(this).siblings(".xllist").outerHeight()+53;
+           $(this).siblings(".xllist").show();
+           $("#testtable4 tbody tr").eq(slideindex + 1).css("height",slideheiht),
+           $(this).css("visibility","hidden");
+               $(".iconmainb").click(function(){
+                     var slideindex = $(this).parents("tr").index();
+                     $(this).parents(".xllist").hide();
+                     $("#testtable4 tbody tr").eq(slideindex + 1).css("height","0px");
+                     $(this).parents(".xllist").siblings(".iconmain").css("visibility","visible")
+               });
+         });
+
+
+         //表格弹出
+         $(".outname").click(function(){
+            $(".conalert").css("display","none!important");
+            $("#mb,#conalert").css("display","block");
+         });
+         $("#choseid").click(function(){
+            $("#mb").css("display","none");
+            $("#conalert").css("display","none");
+          });
+</script>
+</body>
+</html>

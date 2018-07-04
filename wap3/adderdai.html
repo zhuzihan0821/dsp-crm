@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+                <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+                                    <div class="col-sm-10" id="metalistone4">
+                                        <div class="searchin">
+                                              <i class="icon font_family icon-input_search"></i>搜索入口<i class="icon font_family icon-btn_more_arrowup"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="bubble" id="merge">
+                                      供应商：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="erdai">
+                                      二代主体：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="yuanerdai">
+                                      原二代主体：<span>天津</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+                                    <div class="bubble" id="number">
+                                      合同编号：<span>天津医</span>...
+                                      <i class="icon font_family icon-pop_close"></i>
+                                    </div>
+
+                                    <div class="metabox">
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">供应商：</label>
+                                            <input class="form-control" id="inputPassword1" placeholder="请输关键词">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">二代主体：</label>
+                                            <input class="form-control" id="inputPassword2" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">原二代主体：</label>
+                                            <input class="form-control" id="inputPassword3" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label for="inputPassword3" class="col-sm-2 control-label">合同编号：</label>
+                                            <input class="form-control" id="inputPassword4" placeholder="请输关键词">
+                                        </div>
+
+                                        <div class="hewap"></div>
+                                          <button type="button" class="search">搜索</button>
+                                          <button type="button" class="fregin">清空</button>
+                                    </div>
+
+
+                        </ul>
+
+    <div class="newmain">
+      <p class="golist"><i class="icon font_family icon-btn_more_arrowup"></i>返回列表</a>
+    </div>
+
+        <form class="form-horizontal">
+    <div class="newmenu">      
+        <h1>新增记录</h1>
+       <button type="button" class="reok">保存</button>
+       <button type="button" class="relink"><img src="assets/images//btn_refresh.png">重置</button>
+    </div>
+
+<div class="newcon">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label"><span class="star">*</span>供应商：</label>
+              <input class="form-control" id="inputEmail3" placeholder="请输入5~15字段">
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>二代主体：</label>
+              <input class="form-control erro" id="inputPassword3" placeholder="请输入5~15字段">
+              <p class="perro">此项不能为空</p>
+          </div>  
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>返点：</label>
+              <input class="form-control" id="inputPassword3" placeholder="请输入5~15字段">
+          </div>
+
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>原二代主体：</label>
+              <input class="form-control" id="inputPassword3" placeholder="请输入5~15字段">
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>原返点：</label>
+              <input class="form-control" id="inputPassword3" placeholder="请输入5~15字段">
+          </div>
+
+
+        <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>变更日期：</label>
+             <div class="iDate date2">
+               <input type="text">
+                <button type="button" class="addOn"></button>
+             </div>
+         </div>    
+
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"><span class="star">*</span>合同编号：</label>
+              <input class="form-control" id="inputPassword3" placeholder="请输入5~15字段">
+          </div>
+
+         <button type="button" class="btn btn-success">保存</button>
+</div>
+        </form>
+<script type="text/javascript">
+$(document).ready(function(){
+    if($(".iDate.date2").length>0){
+        $(".iDate.date2").datetimepicker({
+            locale:"zh-cn",
+            format:"YYYY-MM-DD",
+            dayViewHeaderFormat:"YYYY年 MMMM"
+        });
+    };
+    //弹出位置
+    $(".addOn").click(function(){
+        var inset = $(this).offset();
+        $(".dtPicker .inner").css("left",inset.left + 120);
+        $(".dtPicker .inner").css("top",inset.top + 200);
+    });
+     //清空
+     $(".relink").click(function(){
+       $('input').val('')
+     });
+     //返回列表
+     $(".golist").click(function(){
+       window.history.back();
+     });
+            //列表显示控制
+            $(".searchin").click(function(){
+              $(".metabox").toggleClass("showmun");
+            });
+            //清空
+            $(".fregin").click(function(){
+              $(".metabox input").val("");
+            });
+            //搜索
+            $(".search").click(function(){
+             if($("#inputPassword1").val() != ''){
+                $("#merge").css("display","block");
+                $("#merge span").text($("#inputPassword1").val().slice(0,3));
+             }
+             if($("#inputPassword2").val() != ''){
+                $("#erdai").css("display","block");
+                $("#erdai span").text($("#inputPassword2").val().slice(0,3));
+             }
+             if($("#inputPassword3").val() != ''){
+                $("#yuanerdai").css("display","block");
+                $("#yuanerdai span").text($("#inputPassword3").val().slice(0,2));
+             }
+             if($("#inputPassword4").val() != ''){
+                $("#number").css("display","block");
+                $("#number span").text($("#inputPassword4").val().slice(0,3));
+             }
+             $(".metabox input").val("");
+              $(".metabox").toggleClass("showmun");
+            }); 
+            //删除已选
+            $(".bubble .icon-pop_close").click(function(){
+              $(this).parent(".bubble").css("display","none");
+            });
+})
+</script>
+
+</body>
+</html>

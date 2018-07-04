@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+    <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+        <div class="col-sm-10" id="metalistonej">
+           <div class="input-group input-group-minimal">
+                <input type="email" class="form-control" placeholder="请输入付款主体或充值编号">
+                <span class="input-group-addon">
+                    <i class="linecons-search"></i>
+                </span>
+            </div>
+        </div>
+    </ul>
+            
+     <script>
+         $(function(){
+             $('.input-group select').searchableSelect();
+         });
+     </script>
+
+    <div class="topmain">
+        <h1>备用金记录</h1>
+        <a href="addbeiyongjin.html"><p>新增备用金</p></a>
+    </div>
+
+
+    <div class="gridleft">
+         <div class="leftbottom">
+             <div class="input-group" id="input-group1">
+                <span class="tspan">请选择：</span>
+                                    <select>
+                                      <option value="jQue">二代主体</option>
+                                      <option value="Black">商品名称</option>
+                                      <option value="device">供应商</option>
+                                      <option value="with">平台</option>
+                                      <option value="enterta">行业</option>
+                                      <option value="and">广告主名称</option>
+                                      <option value="social">省/市</option>
+                                  </select>
+              </div> 
+         </div>
+         <div class="rightbottom">
+                 <h1>预付备用金：<span>518,100.00</span>元</h1>
+                 <h1>账户回划未使用：<span>18,155.00</span>元</h1>
+         </div>
+    </div>
+
+    <div class="gridright">
+         <div class="leftbottom">
+             <div class="input-group" id="input-group1">
+                <span class="tspan">备用金类型：</span>
+                                    <select>
+                                      <option value="jQue">二代主体</option>
+                                      <option value="Black">商品名称</option>
+                                      <option value="device">供应商</option>
+                                      <option value="with">平台</option>
+                                      <option value="enterta">行业</option>
+                                      <option value="and">广告主名称</option>
+                                      <option value="social">省/市</option>
+                                  </select>
+                <span class="tspan">来源/去向：</span>
+                                    <select>
+                                      <option value="jQue">二代主体</option>
+                                      <option value="Black">商品名称</option>
+                                      <option value="device">供应商</option>
+                                      <option value="with">平台</option>
+                                      <option value="enterta">行业</option>
+                                      <option value="and">广告主名称</option>
+                                      <option value="social">省/市</option>
+                                  </select>
+              </div> 
+         </div>
+         <div class="rightbottom">
+             <div class="bjui-pageContent">
+               <div class="form-group d_t_dater">
+                     <span class="tspan">开票日期：</span>
+                       <div class="input-group">
+                           <button type="button" class="btn btn-default" id="daterange-btn1">
+                               <span>
+                                 请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+                               </span>
+                             </button>
+                       </div>
+               </div>  
+             </div>
+
+             <input type="text" class="searchid" placeholder="请输入付款主体或充值编号">
+        </div>
+<script type="text/javascript">
+    $('.ranges_1 ul').remove();
+    $('#daterange-btn1').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn1 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+</script>
+         </div>
+    </div>
+
+
+
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p><img src="assets/images/btn_dr.png">导入</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table" id="gridsear">
+<table id="testtable" class="yhh-data-table end-view-btn">
+  <thead>
+    <tr>
+      <th>
+<input type="checkbox" class="cbr cbr-secondary">
+      </th>
+      <th>二代主体</th>
+      <th>备用金类型</th>
+      <th>金额</th>
+      <th>来源/去向</th>
+      <th>日期</th>
+      <th>可使用余额</th>
+      <th colspan="2">操作</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td class="recharge">充值编号：<span class="comname">34324454343</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td class="recharge">充值编号：<span class="comname">34324454343</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td class="recharge">充值编号：<span class="comname">34324454343</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <input type="checkbox" class="cbr cbr-secondary">
+      </td>
+      <td>深圳市脸萌科技有限公司</td>
+      <td>预付</td>
+      <td>42,884.00</td>
+      <td>付款主体：<span class="comname">天津易云科技有限公司</span></td>
+      <td>2018-04-19</td>
+      <td>474.00</td>
+      <td class="nobor">
+        <div class="green">
+          <a href="editbeiyongjin.html">
+          <i class="icon font_family icon-btn_list_edit"></i>
+          </a>
+        </div>
+      </td>
+      <td class="nobor">
+        <div class="rem">
+          <i class="icon font_family icon-btn_list_delete"></i>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(function(){
+            $(".rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $("#testtable tr").eq(reindex+1).remove();
+            });
+
+            $("#testtable thead .cbr-replaced").click(function(){
+                 $("#testtable tbody .cbr-replaced").toggleClass("cbr-checked")
+            });
+
+                    //如果充值不显示修改
+                $(".recharge").each(function(){
+                   $(this).parent().find(".green").css("display","none")
+                })
+              })
+</script>
+
+</body>
+</html>

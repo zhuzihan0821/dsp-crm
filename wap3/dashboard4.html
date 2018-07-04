@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+
+            
+                <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+                    <li class="search-form">
+
+                                    <div class="col-sm-10" id="metalistone">
+                                        <div class="input-group">
+                                              <select>
+                                                <option value="jQue">账户ID</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                              </select>
+                                                 <script>
+                                                     $(function(){
+                                                         $('.input-group select').searchableSelect();
+                                                     });
+                                                 </script>
+
+            
+                                            <div class="input-group input-group-minimal">
+                                            <input type="email" class="form-control" placeholder="请输入账户ID进行查询">
+                                            <span class="input-group-addon">
+                                                <i class="linecons-search"></i>
+                                            </span>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </li>
+                        </ul>
+            
+            
+    <div class="topmain">
+        <h1>充值记录</h1>
+        <a href="addchongzhi.html"><p>新增记录</p></a>
+    </div>
+
+
+    <div class="topcenterleft">
+		<div class="leftbottom">
+           <span class="tspan">平台类型：</span>
+                  <div class="form-block">
+                      <label>
+                          <input type="radio" name="radio-3"class="cbr cbr-info">
+                          GDT
+                      </label>
+
+                      <label>
+                          <input type="radio" name="radio-3"class="cbr cbr-info">
+                          MP
+                      </label>
+                  </div>
+                                        <div class="input-group" id="input-group1">
+             							<span class="tspan">类型选择：</span>
+                                              <select>
+                                                <option value="jQue">账户类型</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                            </select>
+                                              <select>
+                                                <option value="jQue">充值来源</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                            </select>                  
+                                              <select>
+                                                <option value="jQue">信息来源</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                            </select>
+                                         </div> 
+
+
+		</div>
+<div class="rightbottom">
+	<div class="bjui-pageContent">
+	    <div class="form-group d_t_dater">
+	          <span class="tspan">充值日期：</span>
+	            <div class="input-group">
+	                <button type="button" class="btn btn-default" id="daterange-btn1">
+	                    <span>
+	                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+	                    </span>
+	                  </button>
+	            </div>
+	    </div>  
+	</div>
+	
+	<div class="bjui-pageContent">
+	    <div class="form-group d_t_dater">
+	          <span class="tspan">还款日期：</span>
+	            <div class="input-group">
+	                <button type="button" class="btn btn-default" id="daterange-btn2">
+	                    <span>
+	                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+	                    </span>
+	                  </button>
+	            </div>
+	    </div>  
+	</div>
+	
+	<div class="bjui-pageContent">
+	    <div class="form-group d_t_dater">
+	          <span class="tspan">开票日期：</span>
+	            <div class="input-group">
+	                <button type="button" class="btn btn-default" id="daterange-btn3">
+	                    <span>
+	                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+	                    </span>
+	                  </button>
+	            </div>
+	    </div>  
+	</div>
+</div>
+<script type="text/javascript">
+    $('.ranges_1 ul').remove();
+    $('#daterange-btn1').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn1 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn1 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+
+
+    $('#daterange-btn2').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn2 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn2 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+
+
+    $('#daterange-btn3').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn3 span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn3 span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    }
+);
+</script>
+    </div>
+<div class="topcenterright">
+	<h2 class="maintop">总账显</h2>
+	<h1>515,458,100,00<span>元</span></h1>
+  <h2 class="mainbottom">共计 14 条</h2>
+	<h3 class="mainbottomp"><div class="procxes"><img src="assets/images/btn_dc.png">查看详情</div></h3>
+</div>
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p class="ced"><img src="assets/images/btn_zdyl.png">自定义列</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table" id="jilutable">
+  <table id="testtable">
+      <thead>
+        <tr>
+           <th><input type="checkbox" class="cbr cbr-secondary"></th>
+           <th>充值日期</th>
+           <th>充值编号</th>
+           <th>账户ID</th>
+           <th>产品名称</th>
+           <th>广告主名称</th>
+           <th>平台类型</th>
+           <th>财务账户类型</th>
+           <th>充值类型</th>
+           <th>信息来源</th>
+           <th>供应商</th>
+           <th>二代主体</th>
+           <th>供应商返点</th>
+           <th>客户返点</th>
+           <th>应付金额 (元）</th>
+           <th>账显金额 (元）</th>
+           <th>回划再充金额 (元)</th>
+           <th>备用金金额 (元)</th>
+           <th>付款金额 (元)</th>
+           <th>垫款金额 (元)</th>
+           <th>垫款来源</th>
+           <th>需还款金额 (元)</th>
+           <th>充值信息来源截图</th>
+           <th>付款主体</th>
+           <th>还款日期　　还款金额 (元)</th>
+           <th>总还款金额 (元)</th>
+           <th>欠款金额 (元)</th>
+           <th>开票日期　　开票金额 (元)　　票号</th>
+           <th>总开票金额 (元)</th>
+           <th>未开票金额 (元)</th>
+           <th>备注</th>
+           <th class="caozuo2">操作</th>
+         </tr>
+        </thead>
+<tbody>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+   <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>2018-04-26</td>
+    <td>CZYY201801010001</td>
+    <td>3243253342</td>
+    <td><span class="textline">广点通线上支付功能</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">支付功能新手教程</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span>GDT</span><i class="icon font_family icon-btn_list_downarrow"></i>
+     <div id="show">
+         <div id="info">
+             <div id="outarrow"></div>
+             <div id="innerarrow"></div>
+             <ul id="content">
+                 <li>GDT</li>
+                 <li>MP</li>
+             </ul>
+         </div>
+     </div>
+    </td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td>现金账户</td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td><span class="textline">天津易云信息科技有限公司</span><i class="icon font_family icon-btn_list_edit"></i></td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>51532.00</td>
+    <td>天津点我信息科技有限公司</td>
+    <td>dsfdfs</td>
+    <td class="picicon"><div class="pimg"><img src="assets/images/yimg/yuan001.png"><i class="icon font_family icon-input_search"></div></td>
+    <td>安沃移动广告传媒（天津）有限公司</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>
+      <span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span></p>
+      <p><span class="linkbir">2018-04-26</span>　　　<span class="linkpri">6456.00</span>　　　<span class="linkqir">532.00</span><span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    <td>2018-04-26</td>
+    <td class="concolor">51532.00</td>
+    <td>第一批次的开票已经由李娜办理。</td>
+    </tr>
+  <tr>
+</tbody>
+  </table>
+
+
+
+
+<div class="fixjilu">
+    <table id="testtable4">
+        <th colspan="2">操作</th>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td class="nobor"> <a href="editchongzhi.html"><div class="green"> <i class="icon font_family icon-btn_list_edit"></i></div></a><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+   </table>
+</div>
+</div>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+
+     <div class="metabox" id="metabox">
+         <div class="boxtop">
+          <span>必选项</span>
+          <div class="hr"></div>
+        </div>
+      <div class="listbox">
+         <ul class="ulbox">
+           <li><img src="assets/images/noclick.png">充值日期</li>
+           <li><img src="assets/images/noclick.png">广告主名称</li>
+           <li><img src="assets/images/noclick.png">信息来源</li>
+         </ul>
+         <ul class="ulbox">
+           <li><img src="assets/images/noclick.png">充值编号</li>
+           <li><img src="assets/images/noclick.png">平台类型</li>
+           <li><img src="assets/images/noclick.png">供应商</li>
+         </ul>
+         <ul class="ulbox">
+           <li><img src="assets/images/noclick.png">账户ID</li>
+           <li><img src="assets/images/noclick.png">财务账户类型</li>
+           <li><img src="assets/images/noclick.png">二代主体</li>
+         </ul>
+         <ul class="ulbox">
+           <li><img src="assets/images/noclick.png">产品名称</li>
+           <li><img src="assets/images/noclick.png">充值类型</li>
+           <li><img src="assets/images/noclick.png">备注</li>
+         </ul>
+       </div>
+         <div class="boxtop">
+          <span>可选项</span>
+          <div class="hr"></div>
+        </div>
+      <div class="listbox">
+         <ul class="ulbox">
+           <li><input type="checkbox" class="cbr cbr-secondary">供应商返点</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">回划再充金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">垫款来源</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">还款日期</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">开票日期</li>
+         </ul>
+         <ul class="ulbox">
+           <li><input type="checkbox" class="cbr cbr-secondary">客户返点</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">备用金金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">需还款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">还款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">开票金额 (元)</li>
+         </ul>
+         <ul class="ulbox">
+           <li><input type="checkbox" class="cbr cbr-secondary">应付金额 (元）</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">付款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">充值信息来源截图</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">总还款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">总开票金额 (元)</li>
+         </ul>
+         <ul class="ulbox">
+           <li><input type="checkbox" class="cbr cbr-secondary">账显金额 (元）</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">垫款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">付款主体</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">欠款金额 (元)</li>
+           <li><input type="checkbox" class="cbr cbr-secondary">未开票金额 (元)</li>
+         </ul>
+       </div>
+         <div class="hewap"></div>
+           <button type="button" class="search">确定</button>
+           <button type="button" class="fregin">清空</button>
+     </div>
+
+
+<div id="mb"></div>
+<div class="conalert"  id="conalert1">
+        <img class="conimg" src="assets/images/yimg/yuan001.png">
+</div>
+
+<div class="conalert2" id="conalert2">
+        <div class="mainc">
+            <div class="topcon">
+                <h1>金额统计</h1>
+                <div id="choseid">
+                    <img src="assets/images/close.png" width="20" height="20" >
+                </div>
+            </div>
+            <div class="bluebox">
+                <p>总账显</p>
+                <h2>515,458,100,00<span>元</span></h2>
+                <p>共计<i>12条</i></p>
+            </div>
+            <ul class="blueleft">
+              <li><img src="assets/images/box_money_01.png">账显金额</li>
+              <li><img src="assets/images/box_money_02.png">应付金额</li>
+              <li><img src="assets/images/box_money_03.png">垫款金额</li>
+              <li><img src="assets/images/box_money_04.png">欠款金额</li>
+            </ul>
+            <ul class="blueright">
+              <li>518,100.00<span>元</span></li>
+              <li>518,100.00<span>元</span></li>
+              <li>518,100.00<span>元</span></li>
+              <li>518,100.00<span>元</span></li>
+            </ul>
+      </div>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var lastnum = ($(".table .total-num").text()) % 10;
+        var delindex = Math.floor(($(".table .total-num").text()) / 10);
+        var index =  delindex + 1;
+            $(".table .paginate-box").click(function(){
+                if($(".table .current-btn").text() == index){ 
+                     $(".table .fix tr").slice(lastnum+1).css("display","none")
+                }
+                else{
+                    $(".table .fix tr").css("display","table-row");
+                    $(".table .fix table tr td").css("height","52px");
+                }
+            });
+
+            $(".table .rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $(".table #testtable tr").eq(reindex).remove();
+                $(".table .fix tr").eq(reindex).css("display","none");
+            });
+
+            $(".table #testtable4 thead .cbr-replaced").click(function(){
+                 $(".table #testtable4 tbody .cbr-replaced").toggleClass("cbr-checked")
+            })
+        })
+
+	      $(".icon-btn_list_edit").click(function(){
+	      	if($(".baocun").length>0){
+	      		alert("请保存当前修改再继续");
+	      	}
+	      	else{
+	      	    var valueindex = $(this).parent("td").find("span").text();
+	      	    $(this).parent("td").find("span").html('<input type="text" class="modify" value="' + valueindex + '"/><button type="button" class="baocun">保存</button>');
+	      	    $(".baocun").click(function(){
+	      	    	$(this).parent("span").html($(".modify").val());
+	      	    })
+           	} 
+	      });
+        //图片鼠标移动事件
+        $(".pimg").hover(function(){
+          $(this).find(".icon-input_search").css("display","block");
+        },function(){
+          $(this).find(".icon-input_search").css("display","none");
+        });
+        //图片弹出
+        $(".icon-input_search").click(function(){
+          $("#mb,.conalert").css("display","block");
+        });
+        $("#mb").click(function(){
+          $("#mb,.conalert").css("display","none");
+        });
+        //表中下拉
+        $(".icon-btn_list_downarrow").click(function(){
+        	var poslist = $(this).offset();
+        	    $(this).siblings("#show").css("display","block");
+        	    $(this).siblings("#show").css("top",poslist.top);
+        	    $(this).siblings("#show").css("left",poslist.left - 40);
+                $("#show li").click(function(){
+                    if($(this).index() == 0){
+                      $(this).parents("#show").parent("td").find("span").text("GDT");
+                    }
+                    else{
+                      $(this).parents("#show").parent("td").find("span").text("MP");
+                    }
+                    $(this).parents("#show").css("display","none");
+                })
+        })
+         $(".iconmain").click(function(){
+           var slideindex = $(this).parents("tr").index();
+           var slideheiht = $(this).siblings(".xllist").outerHeight()+53;
+           $(this).siblings(".xllist").show();
+           $("#testtable4 tbody tr").eq(slideindex + 1).css("height",slideheiht),
+           $(this).css("visibility","hidden");
+               $(".iconmainb").click(function(){
+                     var slideindex = $(this).parents("tr").index();
+                     $(this).parents(".xllist").hide();
+                     $("#testtable4 tbody tr").eq(slideindex + 1).css("height","0px");
+                     $(this).parents(".xllist").siblings(".iconmain").css("visibility","visible")
+               });
+         });
+        //查看详情
+         $(".procxes").click(function(){
+            $("#mb,#conalert2").css("display","block");
+         });
+         $("#choseid").click(function(){
+            $("#mb,#conalert2").css("display","none");
+         });
+         //列表显示控制
+         $(".ced").click(function(){
+           $(".metabox").toggleClass("showmun");
+         });
+         $(".fregin").click(function(){
+           $(".cbr-secondary").removeClass("cbr-checked");
+         });
+         $(".search").click(function(){
+           $(".metabox").toggleClass("showmun");
+         });
+</script>
+</body>
+</html>
