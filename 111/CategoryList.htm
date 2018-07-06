@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
+
+    <title>Xenon - Responsive Table</title>
+
+
+    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/xenon-core.css">
+        <!--表格 -->
+        <link rel="stylesheet" href="assets/css/cssmodel/jquery.yhhDataTable.css" />
+        <link rel="stylesheet" href="assets/css/cssmodel/daterangepicker.css"/>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- 双联日期选择 -->
+        <script type="text/javascript" src="assets/js/jsmodel/moment.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/daterangepicker.js"></script>
+        <!-- 单联提日期选择 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/cssmodel/tabled.css" media="all">
+        <script type="text/javascript" src="assets/js/jsmodel/dabled.js"></script>
+        <script type="text/javascript" src="assets/js/jsmodel/btabled.js"></script>
+        <!-- 搜索选择 -->
+        <link rel="stylesheet" href="assets/js/select2/select2.css">
+        <link rel="stylesheet" href="assets/css/xenon-forms.css">
+        <script src="assets/js/select2/select2.min.js"></script>
+        <script src="assets/js/multiselect/js/jquery.multi-select.js"></script>
+        <script src="assets/js/joinable.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+        <!-- maintop -->
+    <link rel="stylesheet" href="assets/css/cssmodel/jquery.searchableSelect.css"/>
+    <script src="assets/js/jsmodel/jquery.searchableSelect.js"></script>
+        <!-- mainjs -->
+    <script src="assets/js/resizeable.js"></script>
+    <script src="assets/js/xenon-custom.js"></script>
+</head>
+<body class="page-body" id="index">
+
+
+            
+                <ul class="user-info-menu left-links list-inline list-unstyled" id="topmain">
+                    <li class="search-form">
+
+                                    <div class="col-sm-10" id="metalistone">
+                                        <div class="input-group">
+                                              <select>
+                                                <option value="jQue">账户ID</option>
+                                                <option value="Black">商品名称</option>
+                                                <option value="device">供应商</option>
+                                                <option value="with">平台</option>
+                                                <option value="enterta">行业</option>
+                                                <option value="and">广告主名称</option>
+                                                <option value="social">省/市</option>
+                                              </select>
+                                                 <script>
+                                                     $(function(){
+                                                         $('.input-group select').searchableSelect();
+                                                     });
+                                                 </script>
+
+            
+                                            <div class="input-group input-group-minimal">
+                                            <input type="email" class="form-control" placeholder="请输入账户ID进行查询">
+                                            <span class="input-group-addon">
+                                                <i class="linecons-search"></i>
+                                            </span>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </li>
+                        </ul>
+            
+            
+    <div class="topmain">
+        <h1>开户记录</h1>
+        <a href="addperson.html"><p>添加用户</p></a>
+    </div>
+
+
+    <div class="topcenter">
+         <div class="form-group">
+             <span class="tspan">筛选类型</span>
+             <script type="text/javascript">
+                 jQuery(document).ready(function($)
+                 {
+                     $("#s2example-1").select2({
+                         allowClear: true
+                     }).on('select2-open', function()
+                     {
+                         $(".rpl").addClass("blockown");
+                         var indexle = $("#select2-drop").offset();
+                         $(".blockown").css("left",indexle.left)
+                         $(this).data('select2').results.addClass('overflow-hidden').perfectScrollbar();
+                     });
+                  $(".rpl").click(function(){
+                    $("#mb").css("display","block");
+                    $(".conalert").css("display","block");
+                    $(".select2-search").css("display","none");
+                  });
+                  $("#choseid").click(function(){
+                    $("#mb").css("display","none");
+                    $(".conalert").css("display","none");
+                    $(".select2-search").css("display","block");
+                  });
+                 });
+             </script>
+             <select class="form-control" id="s2example-1" >
+                 <option>二代主体1</option>
+                     <option>二代主体</option>
+                     <option>深圳市脸萌科技有限公司</option>
+                     <option>易云科技有限公司</option>
+                     <option>北京卡路里科技有限公司</option>
+                     <option>深圳市脸萌科技有限公司</option>
+                     <option>北京卡路里科技有限公司</option>
+                     <option>易云科技有限公司</option>
+                     <option>易云科技有限公司</option>
+                     <option>北京卡路里科技有限公司</option>
+                     <option>北京卡路里科技有限公司</option> 
+             </select>  
+                 <div class="rpl"><img src="assets/images/btn_name.png">修改二代主体名称</div>
+         </div>
+
+             <script type="text/javascript">
+                 jQuery(document).ready(function($)
+                 {
+                     $("#sboxit-4").selectBoxIt({
+                         showEffect: 'fadeIn',
+                         hideEffect: 'fadeOut'
+                     });
+                 });
+             </script>
+             <select class="form-control" id="sboxit-4">
+                 <option>付款主体付款主体</option>
+                 <option value="al">付款主体1</option>
+                 <option value="au">付款主体2</option>
+                 <option value="bd">付款主体3</option>
+                 <option value="br">付款主体4</option>
+                 <option value="ca">付款主体5</option>
+                 <option value="cn">付款主体6</option>
+             </select>  
+
+<script type="text/javascript">
+$(document).ready(function(){
+    if($(".iDate.date").length>0){
+        $(".iDate.date").datetimepicker({
+            locale:"zh-cn",
+            format:"YYYY-MM-DD",
+            dayViewHeaderFormat:"YYYY年 MMMM"
+        });
+    }
+})
+</script>
+  <span class="tspan">账户审核通过日期：</span>
+<div class="iDate date">
+  <input type="text">
+   <button type="button" class="addOn"></button>
+</div>
+
+
+<div class="bjui-pageContent">
+    <div class="form-group d_t_dater">
+          <span class="tspan">开户时间范围：</span>
+            <div class="input-group">
+                <button type="button" class="btn btn-default" id="daterange-btn">
+                    <span>
+                      请选择时间段 <i class="icon iconfont icon-calendar1"></i>
+                    </span>
+                  </button>
+            </div>
+    </div>  
+</div>
+<script type="text/javascript">
+    $('.ranges_1 ul').remove();
+    $('#daterange-btn').daterangepicker({
+        ranges: {
+            '全部': [moment(), moment().subtract(-1, 'days')],
+            '今天': [moment(), moment()],
+            '明天': [moment().subtract(-1, 'days'), moment().subtract(-1, 'days')],
+            '未来七天': [moment(),moment().subtract(-6, 'days')],
+            '未来30天': [moment(),moment().subtract(-29, 'days')],
+            '未来60天': [moment(),moment().subtract(-59, 'days'), ]
+        },
+        startDate: moment(),
+        endDate: moment()
+    },
+    function(start, end,label) {
+        if(label=='全部'){
+            $('#daterange-btn span').html('全部');
+        }else if(label=='今天'){
+            $('#daterange-btn span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='明天'){
+            $('#daterange-btn span').html(start.format('YYYY-MM-DD'));
+        }else if(label=='未来七天'){
+            $('#daterange-btn span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来30天'){
+            $('#daterange-btn span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }else if(label=='未来60天'){
+            $('#daterange-btn span').html(start.format('YYYY-MM-DD')+'-'+end.format('YYYY-MM-DD'));
+        }
+        
+    })
+    // $(".resetBtn").click(function(){
+    //   $("#daterange-btn span").html('请选择时间段 <i class="icon iconfont icon-calendar1"></i>');
+    //   $(".daterangepicker").hide();
+    // });
+</script>
+    </div>
+
+
+    <div class="topbottom">
+        <p><img src="assets/images/btn_delete.png">批量删除</p>
+        <p><img src="assets/images/btn_dr.png">导入</p>
+        <p><img src="assets/images/btn_dc.png">导出</p>
+    </div>
+
+                                                
+<div class="table" id="newpwekh">
+  <table id="testtable">
+      <thead>
+        <tr>
+           <th><input type="checkbox" class="cbr cbr-secondary"></th>
+           <th>产品名称</th>
+           <th>供应商</th>
+           <th>平台</th>
+           <th>行业</th>
+           <th>广告主名称</th>
+           <th>省/市</th>
+           <th>开户日期</th>
+           <th>二代供应商</th>
+           <th>二代供应商</th>
+           <th>二代供应商</th>
+           <th>二代供应商</th>
+           <th>二代供应商</th>
+           <th>二代供应商</th>
+           <th>二代主体</th>
+           <th class="caozuo">操作</th>
+         </tr>
+        </thead>
+<tbody>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+  <tr>
+    <td>
+<input type="checkbox" class="cbr cbr-secondary">
+    </td>
+    <td>tdfggfdgfg02</td>
+    <td>tgfhfgh6546003</td>
+    <td>t56456004</td>
+    <td>55656t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>t005</td>
+    <td>dasfsdfsdfsdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>dsfsdfdafsdfdf</td>
+    <td>
+      QQ：4684546876<span class="iconmain"><i class="icon font_family icon-btn_more_arrowup"></i></span>
+      <div class="xllist">
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876</p>
+      <p>QQ：4684546876<span class="iconmainb"><i class="icon font_family icon-btn_more_arrowup"></i></span></p>
+      </div>
+    </td>
+    </tr>
+</tbody>
+  </table>
+
+
+<div class="fix">
+    <table id="testtable4">
+        <th colspan="2">操作</th>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+        <tr><td> <a href="editperson.html"><div class="green"><i class="icon font_family icon-btn_list_edit"></i></div> </a></td><td> <div class="rem"><i class="icon font_family icon-btn_list_delete"></i></div> </td></tr>
+   </table>
+</div>
+</div>
+<div class="paginate-containter">
+  <div class="info-box">显示
+    <span class="start-show-num info-num">11</span>到<span class="end-show-num info-num">20</span>项，共<span class="total-num info-num">22</span>项</div>
+  <div class="paginate-box">
+    <a class="paginate-btn prev-btn fa fa-caret-left" title="上一页"></a>
+    <span class="paginate-num-btn-group">
+      <a class="paginate-btn num-btn">1</a>
+      <a class="paginate-btn num-btn current-btn">2</a>
+      <a class="paginate-btn num-btn">3</a></span>
+    <a class="paginate-btn next-btn fa fa-caret-right end-view-btn" title="下一页"></a>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var lastnum = ($(".table .total-num").text()) % 10;
+        var delindex = Math.floor(($(".table .total-num").text()) / 10);
+        var index =  delindex + 1;
+            $(".table .paginate-box").click(function(){
+                if($(".table .current-btn").text() == index){ 
+                     $(".table .fix tr").slice(lastnum+1).css("display","none")
+                }
+                else{
+                    $(".table .fix tr").css("display","table-row");
+                    $(".table .fix table tr td").css("height","52px");
+                }
+            });
+
+            $(".table .rem").click(function(){
+                var reindex = $(this).parent().parent("tr").index();
+                $(".table #testtable tr").eq(reindex).remove();
+                $(".table .fix tr").eq(reindex).css("display","none");
+            });
+
+            $(".table #testtable4 thead .cbr-replaced").click(function(){
+                 $(".table #testtable4 tbody .cbr-replaced").toggleClass("cbr-checked")
+            })
+        })
+</script>`
+
+<div id="mb"></div>
+<div class="conalert">
+        <div class="mainc">
+            <div class="topcon">
+                <h1>修改二代主体名称</h1>
+                <div id="choseid">
+                    <img src="assets/images/close.png" width="20" height="20" >
+                </div>
+            </div>
+            <script type="text/javascript">  
+            $(function() { 
+                $('#filterName').keyup(function(){   
+                     $('#table tbody tr').hide().filter(":contains('" +($(this).val()) + "')").show(); 
+                     if($('#filterName').val()==''){
+                        $('#table tbody tr').slice(10).hide(); 
+                     }
+                         })
+             });  
+          </script>
+        <div class="inputs">
+         <input type="text" id="filterName" placeholder="搜索二代主体名称"/>
+        </div>
+            <table class="table table-hover" id="table">
+                <thead>
+                    <tr data-tabullet-map="id">
+                        <th data-tabullet-map="name" class="edname"> </th>
+                        <th width="50" data-tabullet-type="edit"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr data-tabullet-id="1">
+                        <td data-tabullet-map="name" class="edname">卡路里科技有限公司1</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="2">
+                        <td data-tabullet-map="name" class="edname">卡路里科技有限公司2</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="101">
+                        <td data-tabullet-map="name" class="edname">卡路里科技有限公司3</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="102">
+                        <td data-tabullet-map="name" class="edname">卡路里科技有限公司4</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="6">
+                        <td data-tabullet-map="name" class="edname">北京卡路里科技有限司5</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="8">
+                        <td data-tabullet-map="name" class="edname">北京卡rty路里科技公6</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="9">
+                        <td data-tabullet-map="name" class="edname">北京卡路里科技ry有司7</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="10">
+                        <td data-tabullet-map="name" class="edname">北京卡路里y科技有司8</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="11">
+                        <td data-tabullet-map="name" class="edname">北京卡路里科技有限司9</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                      <tr data-tabullet-id="12">
+                        <td data-tabullet-map="name" class="edname">北京e卡路里科技有司0</td>
+                        <td data-tabullet-type="edit">
+                          <button class="defaultwv">修改</button></td>
+                      </tr>
+                    </tbody>
+            </table>
+            <div class="data-table-bottom-box paginate-containter">
+              <div class="info-box">显示
+                <span class="start-show-num info-num">1</span>到
+                <span class="end-show-num info-num">10</span>项，共
+                <span class="total-num info-num">12</span>项</div>
+              <div class="paginate-box">
+                <span class="paginate-num-btn-group">
+                  <a class="paginate-btn num-btn current-btn">1</a>
+                  <a class="paginate-btn num-btn end-view-btn">2</a></span>
+              </div>
+            </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(".iconmain").click(function(){
+    var slideindex = $(this).parents("tr").index();
+    var slideheiht = $(this).siblings(".xllist").outerHeight()+53;
+    $(this).siblings(".xllist").show();
+    $("#testtable4 tbody tr").eq(slideindex + 1).css("height",slideheiht),
+    $(this).css("visibility","hidden");
+        $(".iconmainb").click(function(){
+              var slideindex = $(this).parents("tr").index();
+              $(this).parents(".xllist").hide();
+              $("#testtable4 tbody tr").eq(slideindex + 1).css("height","0px");
+              $(this).parents(".xllist").siblings(".iconmain").css("visibility","visible")
+        });
+  });
+ //修改
+   $(document).on('click', '.defaultwv', function() {
+      var edname = $(this).parent().parent("tr").find(".edname").text();
+      $(this).parent().parent("tr").find(".edname").html('<input type="text" class="modify3" value="' + edname + '"/>');
+       $(this).text("保存").addClass("baocunjl").removeClass("defaultwv");
+    //保存
+     $(document).on('click', '.baocunjl', function() {
+        console.log($(this).parent().parent("tr").find(".edname").val())
+        $(this).parent().parent("tr").find(".edname").html($(".modify3").val());
+        $(this).text("修改").addClass("defaultwv").removeClass("baocunjl");
+    })
+ });
+</script>
+</body>
+</html>
